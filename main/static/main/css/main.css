@@ -1,0 +1,100 @@
+body {
+    background-color: rgb(1, 12, 12);
+    color: whitesmoke;
+    background-image: repeating-radial-gradient(45deg, rgb(1, 12, 12) 2px, gray 1px);
+}
+
+aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: repeating-linear-gradient(45deg, rgb(1, 12, 12) 2px, gray 3000px);
+    width: 100%;
+    padding: 0.6%;
+    height: 100px;
+    color: whitesmoke;
+    border-radius: 30px;
+    border-width: 4px;
+    border-style: double;
+    border-color: rgb(107, 107, 107);
+    z-index: 1000;
+}
+
+aside img {
+    width: 90px;
+    height: 90px;
+    float: inline-start;
+    
+}
+
+aside .logo {
+    display: block;
+    visibility: visible;
+    font-size: 30px;
+    font-weight: 700;
+    left: 87px;
+    top: -33px;
+    z-index: 10;
+    color: inherit;
+    transition: transform .7s ease;
+}
+
+aside .logo:hover {
+    color: white;
+    transform: scale(1.04);
+}
+
+aside ul {list-style: none;}
+
+aside ul li {
+    display: inline-flex;
+    color: whitesmoke;
+    margin: 0 10px;
+    margin-top: 18px;
+    transition: transform .7s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: rgb(180, 30, 30);
+    text-decoration: none;
+    transform: scale(1.04);
+}
+
+aside ul li.add-news {
+    position: relative;
+    left: 20px;
+    top: 2px;
+    color: rgb(255, 255, 255);
+}
+
+.features {
+    float: left;
+    color: whitesmoke;
+    margin-top: 80px;
+    text-align: center;
+    width: 75%;
+}
+
+.features h1 {font-size: 50px; margin-top: -10px; margin-left: 35%;}
+.features p {max-width: 400px; margin: 20px auto; margin-left: 50%;}
+
+.alert-warning {
+    float: left;
+    clear: both;
+    width: 900px;
+    margin: 20px 27%;
+    text-align: left;
+    border-radius: 30px;
+    border-color: rgb(107, 107, 107);
+    color: whitesmoke;
+    background-image: repeating-linear-gradient(45deg, rgb(1, 12, 12) 2px, gray 3000px);
+}
+
+form {
+    margin-left: 27%;
+    width: 500px;
+    margin-top: 80px;
+}
