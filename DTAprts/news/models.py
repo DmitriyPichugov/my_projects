@@ -16,3 +16,12 @@ class Articles(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+
+
+class Apartment(models.Model):
+    title = models.CharField(max_length=255)
+    price = models.CharField(max_length=100)
+    address = models.TextField()
+    description = models.TextField()
+    link = models.URLField()
+    created_at = models.DateTimeField(auto_now_add=True)
