@@ -17,7 +17,7 @@ kiwisolver==1.4.8
 lxml==5.3.0
 matplotlib==3.10.0
 nodeenv==1.9.1
-numpy==2.2.2
+numpy==2.2.3
 packaging==24.2
 pillow==11.1.0
 platformdirs==4.3.6
@@ -32,3 +32,4 @@ sqlparse==0.5.3
 urllib3==2.3.0
 virtualenv==20.29.1
 plotly==6.0.0
+pandas==2.2.3
