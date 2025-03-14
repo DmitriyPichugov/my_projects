@@ -31,5 +31,4 @@ soupsieve==2.6
 sqlparse==0.5.3
 urllib3==2.3.0
 virtualenv==20.29.1
-plotly>=5.0.0
-gunicorn==23.0.0
+plotly==6.0.0
