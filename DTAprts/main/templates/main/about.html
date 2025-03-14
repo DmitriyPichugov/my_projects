@@ -1,10 +1,132 @@
 {% extends "main/layout.html" %}
 
-{% block title %}Про нас{% endblock  %}
+{% block title %}Анализ объявлений{% endblock %}
 
 {% block content %}
     <div class="features">
-        <h1>Про нас</h1>
-        <p>Здравствуйте, уважаемые хабровчане.</p>
+        <h1>Анализ объявлений</h1>
+        <h4>Укажите следующие характеристики интересующих вас квартир:</h4>
+
+        <form method="GET" action="">
+            <div class="filter-group">
+                <label>Цена (мин):</label>
+                <input type="number" name="price_min" id="price_min" value="{{ request.GET.price_min|default:'0' }}" step="5000">
+                <button type="button" class="arrow-btn" onclick="changeValue('price_min', -5000)">↓</button>
+                <button type="button" class="arrow-btn" onclick="changeValue('price_min', 5000)">↑</button>
+            </div>
+
+            <div class="filter-group">
+                <label>Цена (макс):</label>
+                <input type="number" name="price_max" id="price_max" value="{{ request.GET.price_max }}" step="5000">
+                <button type="button" class="arrow-btn" onclick="changeValue('price_max', -5000)">↓</button>
+                <button type="button" class="arrow-btn" onclick="changeValue('price_max', 5000)">↑</button>
+            </div>
+
+            <div class="filter-group">
+                <label>Комнаты (мин):</label>
+                <input type="number" name="rooms_min" id="rooms_min" value="{{ request.GET.rooms_min|default:'0' }}" step="1">
+                <button type="button" class="arrow-btn" onclick="changeValue('rooms_min', -1)">↓</button>
+                <button type="button" class="arrow-btn" onclick="changeValue('rooms_min', 1)">↑</button>
+            </div>
+
+            <div class="filter-group">
+                <label>Комнаты (макс):</label>
+                <input type="number" name="rooms_max" id="rooms_max" value="{{ request.GET.rooms_max }}" step="1">
+                <button type="button" class="arrow-btn" onclick="changeValue('rooms_max', -1)">↓</button>
+                <button type="button" class="arrow-btn" onclick="changeValue('rooms_max', 1)">↑</button>
+            </div>
+
+            <div class="filter-group">
+                <label>Площадь (мин):</label>
+                <input type="number" name="square_min" id="square_min" value="{{ request.GET.square_min|default:'0' }}" step="5">
+                <button type="button" class="arrow-btn" onclick="changeValue('square_min', -5)">↓</button>
+                <button type="button" class="arrow-btn" onclick="changeValue('square_min', 5)">↑</button>
+            </div>
+
+            <div class="filter-group">
+                <label>Площадь (макс):</label>
+                <input type="number" name="square_max" id="square_max" value="{{ request.GET.square_max }}" step="5">
+                <button type="button" class="arrow-btn" onclick="changeValue('square_max', -5)">↓</button>
+                <button type="button" class="arrow-btn" onclick="changeValue('square_max', 5)">↑</button>
+            </div>
+
+            <div class="filter-group">
+                <label>Комиссия:</label>
+                <select name="commission_filter">
+                    <option value="all" {% if request.GET.commission_filter == 'all' or not request.GET.commission_filter %}selected{% endif %}>Все</option>
+                    <option value="<50" {% if request.GET.commission_filter == '<50' %}selected{% endif %}>Менее 50%</option>
+                    <option value=">50" {% if request.GET.commission_filter == '>50' %}selected{% endif %}>Более 50%</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-success">Применить фильтры</button>
+        </form>
     </div>
-{% endblock  %}
+
+    <div class="analysis-text">
+        {% if error %}
+            <p>{{ error }}</p>
+        {% else %}
+            <h2>Отфильтрованные объявления</h2>
+            <p>Ниже представлены все объявления по вашим фильтрам, если хотите узнать про объявление подробнее, нажмите на его название и вы перейдете на страницу объявления на сайте Циан:</p>
+            {% if filtered_apartments %}
+                <ul id="apartment-list">
+                {% for apt in filtered_apartments %}
+                    <li class="apartment-item" {% if forloop.counter > 10 %}style="display: none;"{% endif %}>
+                        <a href="{{ apt.link }}" target="_blank">{{ apt.title }}</a>
+                    </li>
+                {% endfor %}
+                </ul>
+                {% if filtered_apartments.count > 10 %}
+                    <button id="show-more" class="btn btn-danger">Показать ещё</button>
+                {% endif %}
+            {% else %}
+                <p>Нет объявлений, соответствующих фильтру.</p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="analysis-graphs">
+        <h2>Распределение цен</h2>
+        {{ price_fig|safe }}
+        <p>{{ price_analysis }}</p>
+
+        <h2>Средняя цена по районам</h2>
+        {{ avg_price_fig|safe }}
+        <p>{{ district_analysis }}</p>
+
+        <h2>Цена vs Площадь</h2>
+        {{ scatter_fig|safe }}
+        <p>{{ scatter_analysis }}</p>
+
+        <p>Медиана площади: {{ median_square }} м²</p>
+    </div>
+    
+    <script>
+        function changeValue(inputId, change) {
+            const input = document.getElementById(inputId);
+            let value = parseFloat(input.value) || 0;
+            value += change;
+            if (value < 0) value = 0;
+            input.value = value;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const items = document.querySelectorAll('.apartment-item');
+            const showMoreBtn = document.getElementById('show-more');
+            let visibleCount = 10;
+
+            if (showMoreBtn) {
+                showMoreBtn.addEventListener('click', function() {
+                    const nextItems = Array.from(items).slice(visibleCount, visibleCount + 10);
+                    nextItems.forEach(item => item.style.display = 'list-item');
+                    visibleCount += 10;
+
+                    if (visibleCount >= items.length) {
+                        showMoreBtn.style.display = 'none';
+                    }
+                });
+            }
+        });
+    </script>
+{% endblock %}

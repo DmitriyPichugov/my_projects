@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(1, 12, 12);
+    background-color: rgb(20, 23, 23);
     color: whitesmoke;
     background-image: repeating-radial-gradient(45deg, rgb(1, 12, 12) 2px, gray 1px);
 }
@@ -21,13 +21,13 @@ aside {
     border-style: double;
     border-color: rgb(107, 107, 107);
     z-index: 1000;
+    position: fixed;
 }
 
 aside img {
     width: 90px;
     height: 90px;
     float: inline-start;
-    
 }
 
 aside .logo {
@@ -70,22 +70,212 @@ aside ul li.add-news {
     color: rgb(255, 255, 255);
 }
 
-.features {
-    float: left;
-    color: whitesmoke;
-    margin-top: 80px;
+.intro-text {
+    font-size: 20px;
+    max-width: 600px;
+    margin-top: 20px;
+    transform: translateX(-200px);
     text-align: center;
-    width: 75%;
+    background-image: repeating-linear-gradient(45deg, rgb(1, 12, 12) 2px, gray 3000px);
+    border-radius: 30px;
+    border-width: 4px;
+    border-style: double;
+    border-color: rgb(107, 107, 107);
+    color: whitesmoke;
 }
 
-.features h1 {font-size: 50px; margin-top: -10px; margin-left: 35%;}
-.features p {max-width: 400px; margin: 20px auto; margin-left: 50%;}
+.documentation {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.doc-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.doc-block h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 27px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.doc-text {
+    background-image: repeating-linear-gradient(45deg, rgb(1, 12, 12) 2px, gray 3000px);
+    border-radius: 30px;
+    border-width: 4px;
+    border-style: double;
+    border-color: rgb(107, 107, 107);
+    padding: 15px;
+    width: 100%;
+    max-width: 350px;
+    color: whitesmoke;
+    text-align: left;
+    box-sizing: border-box;
+    transform: translateX(-160px);
+}
+
+.documentation ul, .documentation ol {
+    padding-left: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.documentation ul li, .documentation ol li {
+    margin: 5px 0;
+}
+
+.footer HD {
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    margin-top: 30px;
+    transform: translateX(-210px);
+    font-size: 18px;
+    text-align: center;
+}
+
+.footer-text a {
+    color: whitesmoke;
+    transition: color 0.3s ease;
+}
+
+.footer-text a:hover {
+    color: whitesmoke;
+}
+
+.analysis-graphs {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+.analysis-graphs h2 {
+    margin-top: 40px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.analysis-graphs p {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+    background-image: repeating-linear-gradient(45deg, rgb(1, 12, 12) 2px, gray 3000px);
+    border-radius: 5px;
+    border-radius: 30px;
+    border-width: 4px;
+    border-style: double;
+    border-color: rgb(107, 107, 107);
+    color: whitesmoke;
+}
+
+.analysis-text {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+
+.analysis-text h2 {
+    margin-top: 40px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.analysis-text p {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.analysis-text ul {
+    max-width: 600px;
+    margin: 10px auto;
+    padding: 10px;
+    background-image: repeating-linear-gradient(90deg, rgb(1, 12, 12) 2px, gray 3000px);
+    border-radius: 5px;
+    border-radius: 30px;
+    border-width: 4px;
+    border-style: double;
+    border-color: rgb(107, 107, 107);
+    color: whitesmoke;
+}
+
+.plotly-graph-div {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.features h1 {
+    margin-top: 140px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.features h4 {
+    margin-top: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.features ul li {
+    margin: 5px 0;
+}
+
+.features p {
+    max-width: 400px;
+    margin: 20px auto;
+    margin-left: 50%;
+}
+
+.features-det h1 {
+    margin-top: 140px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.features-det p {
+    max-width: 800px;
+    margin-top: 40px;
+    margin-left: 24%;
+}
+
+.features-det a {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 10px;
+    transform: translateX(615px);
+}
 
 .alert-warning {
     float: left;
     clear: both;
     width: 900px;
-    margin: 20px 27%;
+    margin: 20px 20%;
     text-align: left;
     border-radius: 30px;
     border-color: rgb(107, 107, 107);
@@ -93,8 +283,144 @@ aside ul li.add-news {
     background-image: repeating-linear-gradient(45deg, rgb(1, 12, 12) 2px, gray 3000px);
 }
 
+.alert-warning p {
+    margin-left: 16%;
+}
+
+.features-create h1 {
+    margin-top: 140px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.features-create form {
+    margin-left: 30.5%;
+    width: 600px;
+    margin-top: 50px;
+    padding: 20px;
+    background-image: repeating-linear-gradient(45deg, rgb(1, 12, 12) 2px, gray 3000px);
+    border-radius: 30px;
+    border-width: 4px;
+    border-style: double;
+    border-color: rgb(107, 107, 107);
+    color: whitesmoke;
+}
+
+.features-create .form-field {
+    display: inline-table;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    width: 68%;
+}
+
+.features-create form button.btn.btn-success {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(180, 30, 30);
+    border: 1px solid red;
+    border-radius: 5px;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.features-create form button.btn.btn-success:hover {
+    background-color: rgb(220, 50, 50);
+}
+
+.features-create form span {
+    color: rgb(255, 100, 100);
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
 form {
-    margin-left: 27%;
+    margin: 30px auto 20px 33%;
     width: 500px;
-    margin-top: 80px;
+    text-align: center;
+    background-image: repeating-linear-gradient(45deg, rgb(1, 12, 12) 2px, gray 3000px);
+    border-radius: 30px;
+    border-width: 4px;
+    border-style: double;
+    border-color: rgb(107, 107, 107);
+}
+
+form label {
+    margin: 0 5px;
+    margin-left: 20%;
+    transform: translateX(-160px);
+}
+
+form input, form select {
+    margin: 5px;
+    margin-left: 20%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(107, 107, 107);
+    background-color: rgb(20, 30, 30);
+    color: whitesmoke;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    width: 120px;
+    margin: 0;
+    transform: none;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.filter-group input {
+    width: 100px;
+    transform: none;
+}
+
+.arrow-btn {
+    background-color: rgb(180, 30, 30);
+    border: none;
+    color: whitesmoke;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-btn:hover {
+    background-color: rgb(220, 50, 50);
+}
+
+.btn.btn-success {
+    background-color: rgb(180, 30, 30);
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn.btn-success:hover {
+    background-color: rgb(220, 50, 50);
+}
+
+.btn.btn-danger {
+    background-color: rgb(180, 30, 30);
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn.btn-danger:hover {
+    background-color: rgb(220, 50, 50);
 }
