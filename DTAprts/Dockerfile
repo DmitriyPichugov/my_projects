@@ -1,14 +1,22 @@
 # Базовый образ с Python 3.12
 FROM python:3.12-slim
 
-# Установите рабочую директорию
+RUN apt-get update && apt-get install -y \
+    libpq-dev gcc chromium chromium-driver \
+    && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /app
 
-# Скопируйте все файлы из текущей директории (DTAprts)
-COPY . .
-
-# Установите зависимости
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Запустите Django-сервер
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+COPY . .
+
+ENV PYTHONUNBUFFERED=1 \
+    DJANGO_SETTINGS_MODULE=web_d.settings \
+    PATH="/usr/lib/chromium:${PATH}"
+
+# Открытие порта
+EXPOSE 8000
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "web_d.wsgi:application"]
