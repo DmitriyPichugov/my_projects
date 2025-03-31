@@ -1,0 +1,21 @@
+# ninja log v6
+1	41	1743446385543226564	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	5791419936a54f0e
+1	41	1743446385543226564	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	5791419936a54f0e
+42	2215	1743446387716207076	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	678bf9ea38a1444d
+42	2215	1743446387716207076	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	678bf9ea38a1444d
+2215	2260	1743446387761762091	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	f9895976b251a77e
+2215	2260	1743446387761762091	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	f9895976b251a77e
+2260	2312	1743446387813546079	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	f163cb50efccc037
+2260	2312	1743446387813546079	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	f163cb50efccc037
+2312	2353	1743446387854673321	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	e12080588a46aefe
+2312	2353	1743446387854673321	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	e12080588a46aefe
+2353	2398	1743446387900118169	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	47d1b35d0682748a
+2353	2398	1743446387900118169	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	47d1b35d0682748a
+2399	2433	1743446387935093562	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	7bdef029d78e08b5
+2399	2433	1743446387935093562	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	7bdef029d78e08b5
+2433	2471	1743446387973386983	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	856387c639db5f86
+2433	2471	1743446387973386983	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	856387c639db5f86
+2471	2524	1743446388025624636	CMakeFiles/googletest-populate-complete	d28ae98133426f51
+2471	2524	1743446388025624636	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	d28ae98133426f51
+2471	2524	1743446388025624636	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	d28ae98133426f51
+2471	2524	1743446388025624636	/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	d28ae98133426f51
