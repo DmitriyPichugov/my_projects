@@ -74,8 +74,8 @@ ImageProcessor/
 ```bash
 ./image_processor <input_file> <output_file> [filter1] [filter2] ...
 ```
-`<input_file>`: Путь к входному изображению в формате BMP (24 бита на пиксель).
 
+`<input_file>`: Путь к входному изображению в формате `BMP` (24 бита на пиксель).
 `<output_file>`: Путь к выходному файлу, куда будет сохранён результат.
 `[filter1] [filter2] ...`: Список фильтров с их параметрами.
 ---
