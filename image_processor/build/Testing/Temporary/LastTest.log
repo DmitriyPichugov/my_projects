@@ -1,0 +1,65 @@
+Start testing: Mar 29 00:47 MSK
+----------------------------------------------------------
+1/1 Testing: ImageProcessorTests
+1/1 Test: ImageProcessorTests
+Command: "/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/build/image_test"
+Directory: /Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/build
+"ImageProcessorTests" start time: Mar 29 00:47 MSK
+Output:
+----------------------------------------------------------
+Running main() from /Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 7 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 1 test from ImageTest
+[ RUN      ] ImageTest.Dimensions
+[       OK ] ImageTest.Dimensions (0 ms)
+[----------] 1 test from ImageTest (0 ms total)
+
+[----------] 6 tests from FilterTest
+[ RUN      ] FilterTest.Grayscale
+[       OK ] FilterTest.Grayscale (0 ms)
+[ RUN      ] FilterTest.Negative
+[       OK ] FilterTest.Negative (0 ms)
+[ RUN      ] FilterTest.EdgeDetection
+[       OK ] FilterTest.EdgeDetection (0 ms)
+[ RUN      ] FilterTest.GaussianBlur
+/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/tests/image_test.cpp:86: Failure
+Value of: AreImagesEqual(img, expected)
+  Actual: false
+Expected: true
+
+[  FAILED  ] FilterTest.GaussianBlur (2888 ms)
+[ RUN      ] FilterTest.BlurTwice
+/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/tests/image_test.cpp:95: Failure
+Value of: AreImagesEqual(img, expected)
+  Actual: false
+Expected: true
+
+[  FAILED  ] FilterTest.BlurTwice (5104 ms)
+[ RUN      ] FilterTest.CropTwice
+/Users/anastasia/ami-Anastasiia-Kulia-sanko/tasks/image_processor/tests/image_test.cpp:105: Failure
+Value of: AreImagesEqual(img, expected)
+  Actual: false
+Expected: true
+
+[  FAILED  ] FilterTest.CropTwice (315 ms)
+[----------] 6 tests from FilterTest (8309 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 2 test suites ran. (8309 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] FilterTest.GaussianBlur
+[  FAILED  ] FilterTest.BlurTwice
+[  FAILED  ] FilterTest.CropTwice
+
+ 3 FAILED TESTS
+<end of output>
+Test time =   8.97 sec
+----------------------------------------------------------
+Test Failed.
+"ImageProcessorTests" end time: Mar 29 00:47 MSK
+"ImageProcessorTests" time elapsed: 00:00:08
+----------------------------------------------------------
+
+End testing: Mar 29 00:47 MSK
