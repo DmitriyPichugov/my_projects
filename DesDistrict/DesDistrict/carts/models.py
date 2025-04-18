@@ -25,7 +25,7 @@ class Cart(models.Model):
     
     class Meta:
         db_table = "cart"
-        verbose_name = "Корзины"
+        verbose_name = "Корзина"
         verbose_name_plural = "Корзины"
     
     objects = CartQueryset().as_manager()
