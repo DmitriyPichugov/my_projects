@@ -1,3 +1,4 @@
+from urllib import request
 from django.contrib.auth.decorators import login_required
 from django.contrib import auth, messages
 from django.http import HttpResponseRedirect
@@ -16,7 +17,7 @@ def login(request):
             user = auth.authenticate(username=username, password=password)
             if user:
                 auth.login(request, user)
-                messages.success(request, f"{username}, Вы вошли в аккаунт")
+                messages.success(request, f"{username}, вы вошли в аккаунт")
                 if request.POST.get('next', None):
                     return HttpResponseRedirect(request.POST.get('next'))
                 
@@ -37,7 +38,7 @@ def registration(request):
             form.save()
             user = form.instance
             auth.login(request, user)
-            messages.success(request, f"{user.username}, Вы успешно зарегистрировались и вошли в аккаунт")
+            messages.success(request, f"{user.username}, вы успешно зарегистрировались и вошли в аккаунт")
             return HttpResponseRedirect(reverse('main:index'))
     else:
         form = UserRegistrationForm()
@@ -65,8 +66,11 @@ def profile(request):
     }
     return render(request, 'users/profile.html', context)
 
+def users_cart(request):
+    return render(request, 'users/users_cart.html')
+
 @login_required
 def logout(request):
-    messages.success(request, f"{request.user.username}, Вы вышли из аккаунта")
+    messages.success(request, f"{request.user.username}, вы вышли из аккаунта")
     auth.logout(request)
     return redirect(reverse('main:index'))
