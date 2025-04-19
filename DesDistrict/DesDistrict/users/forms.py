@@ -12,6 +12,9 @@ class UserLoginForm(AuthenticationForm):
             'username',
             'password',
         )
+    
+    # username = forms.CharField()
+    # passsword = forms.CharField()
 
 class UserRegistrationForm(UserCreationForm):
     
