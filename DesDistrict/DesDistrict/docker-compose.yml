@@ -1,0 +1,25 @@
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+      - static_volume:/app/staticfiles
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
+  db:
+    image: postgres:16
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=desdistrict_admin
+      - POSTGRES_PASSWORD=05378999
+      - POSTGRES_DB=desdistrict
+
+volumes:
+  postgres_data:
+  static_volume:
