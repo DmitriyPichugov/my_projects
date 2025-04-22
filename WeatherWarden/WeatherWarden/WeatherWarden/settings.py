@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,6 +70,7 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'WeatherWarden.asgi.application'
 WSGI_APPLICATION = 'WeatherWarden.wsgi.application'
 
 
@@ -77,8 +79,12 @@ WSGI_APPLICATION = 'WeatherWarden.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'weatherwarden',
+        'USER': 'weatherwarden_admin',
+        'PASSWORD': '05378999',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
