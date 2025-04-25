@@ -1,0 +1,56 @@
+# === IDE and Editor files ===
+# IntelliJ / CLion
+.idea/
+# Visual Studio Code
+.vscode/
+# Other editors
+*~               # backup files
+*.swp            # vim swap files
+*.swo
+
+# === Build directories and files ===
+# CMake build output
+build/
+cmake-build-debug/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+# Ninja
+build.ninja
+
+# === Compiled binaries and object files ===
+# Object files
+*.o
+*.obj
+# Shared libraries
+*.so
+# Windows DLLs
+*.dll
+# Mac OS X dynamic libraries
+*.dylib
+# Executables
+*.exe
+*.out
+*.app
+
+# === Logs, reports, coverage ===
+*.log
+*.gcda
+*.gcno
+coverage/
+
+# === Test runner files ===
+.tester.json
+
+# === System files ===
+.DS_Store
+Thumbs.db
+
+# === Environment files ===
+.env
+
+# === Miscellaneous ===
+# Backup and swap
+*.bak
+*.tmp
