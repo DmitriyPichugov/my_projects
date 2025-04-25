@@ -1,3 +1,0 @@
-ImageProcessorTests 1 0
----
-ImageProcessorTests
