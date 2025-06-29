@@ -1,7 +1,7 @@
 from aiogram import Bot, Dispatcher, types
 from aiogram.fsm.storage.memory import MemoryStorage
 from aiogram.fsm.context import FSMContext
-from aiogram.fsm.state import StateGroup, State
+from aiogram.fsm.state import StatesGroup, State
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram import F
 from aiogram.filters import CommandStart
@@ -16,7 +16,7 @@ load_dotenv()
 bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher(storage=MemoryStorage())
 
-class PostForm(StateGroup):
+class PostForm(StatesGroup):
     title = State()
     description = State()
     tone = State()
@@ -51,7 +51,7 @@ async def tone_selected(callback: types.CallbackQuery, state: FSMContext):
     await callback.message.answer("Генерирую пост...")
     
     async with aiohttp.ClientSession() as session:
-        async with session.post("http://localhost:8003/generate", json={
+        async with session.post("http://localhost:8000/generate", json={
             "title": data["title"],
             "description": data["description"],
             "tone": data["tone"]

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from models import PostRequest
-from gpt import generate_post
-from cache import get_cached_post, cache_post
+from adgen.models import PostRequest
+from adgen.gpt import generate_post
+from adgen.cache import get_cached_post, cache_post
 
 
 app = FastAPI()
@@ -12,5 +12,5 @@ async def generate_ad(request: PostRequest):
     if cached:
         return {"text": cached}
     result = await generate_post(request.title, request.description, request.tone)
-    await cache_post(request.title, request.description, request.tone, request.content)
+    await cache_post(request.title, request.description, request.tone, result)
     return {"text": result}
